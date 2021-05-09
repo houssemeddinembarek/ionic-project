@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+
+   <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Créer une annonce</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <form [formGroup]='add'>
+
+    <!--pour le titre -->
+    <div class="form-group col-6">
+        <label for="exampleInputPassword1">Titre :</label>
+        <input type="text" class="form-control"  placeholder="ecrire un nom" formControlName='titre'>
+    <!--Validation du titre -->
+      <div class="col-sm-10">
+        <small id="text-danger" *ngIf="add.get('titre').hasError('required') && add.get('titre').touched">this field is required</small>
+        <small id="text-danger" *ngIf="add.get('titre').hasError('minlength')">
+               the minimum length for this field is 8 character
+        </small> 
+      </div>
+    </div>
+    <!--********************* -->
+
+    <!--pour la description -->
+      <div class="form-group col-6">
+        <label for="exampleInputdescription">Description :</label>
+        <input type="text" class="form-control"  placeholder="ecrire une description" formControlName='description' id="exampleInputdescription">
+    <!--Validation du description -->
+      <div class="col-sm-10">
+        <small id="text-danger" *ngIf="add.get('description').hasError('required') && add.get('description').touched">this field is required</small>
+        <small id="text-danger" *ngIf="add.get('description').hasError('minlength')">
+               the minimum length for this field is 8 character
+        </small> 
+      </div>
+    </div>
+    <!--********************* -->
+
+    <!--pour le prix -->
+      <div class="form-group col-6">
+        <label for="exampleInputprix">Prix :</label>
+        <input type="number" class="form-control"  placeholder="saisir le prix" formControlName='prix' id="exampleInputprix">
+    <!--Validation du description -->
+      <div class="col-sm-10">
+          <small class="text-danger" *ngIf="add.get('prix').hasError('min')">
+            le prix doit étre positive
+          </small>
+          <small class="text-danger" *ngIf="add.get('prix').hasError('required') && add.get('description').touched">
+            le champ est obligatoire
+          </small>
+      </div>
+    </div>
+    <!--********************* -->
+
+    <!--pour la categorie -->
+      <div class="form-group col-6">
+        <label for="exampleInputcategorie">Categorie :</label>
+        <select class="form-control" id="exampleInputcategorie" formControlName="categorie">
+                <option>Voiture</option>
+                <option>Immobilier</option>
+                <option>Informatique</option>
+        </select>    
+      <!--Validation du categorie -->
+      <div class="col-sm-10">
+          <small class="text-danger" *ngIf="add.get('categorie').hasError('required') && add.get('categorie').touched">
+            le champ est obligatoire
+          </small>
+      </div>
+    </div>
+    <!--********************* -->
+
+ <!--pour les images -->
+    <div class="form-group col-6">
+        <label for="exampleInputimage">Image :</label>
+        <input type="file" class="form-control" accept=".jpg,.jpeg,.png" id="file" name="image"   formControlName="image" >
+    <!--Validation du titre -->
+      <div class="col-sm-10">
+        <small class="text-danger" *ngIf="add.get('image').hasError('required')">
+            le champ est obligatoire
+        </small>
+      </div>
+    </div>
+    <!--********************* -->
+
+    <button type="submit" class="btn btn-primary" (click)="onadd()">Submit</button>
+  </form>
+
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+
+   <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Annonce</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+      <ion-item *ngFor="let annonce of annoncesData">
+        <ion-card>
+            <ion-card-header class="myCardHeader">Annonces</ion-card-header>
+            <ion-card-content padding>
+                <p>Name :<strong> {{annonce.name}}</strong></p>
+                <p>Email :<strong> {{annonce.email}}</strong></p>
+                <ion-item *ngIf="annonce.country == 'USA' " style="color: red;">
+                    <p>country :<strong> {{annonce.country}}</strong></p>
+                </ion-item>
+                <ion-item *ngIf="annonce.age != 'USA' ">
+                    <p>age :<strong> {{annonce.age}}</strong></p>
+                </ion-item>
+            <ion-button >Edit</ion-button> 
+            <ion-button (click)="delete(annonce.id)">Supprimer</ion-button>
+            </ion-card-content>
+        </ion-card>
+    </ion-item>
+</ion-content>

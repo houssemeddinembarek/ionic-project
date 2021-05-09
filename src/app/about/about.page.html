@@ -1,0 +1,29 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+
+    <ion-title>About</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-card >
+        <ion-card-header class="myCardHeader">Contact Me</ion-card-header>
+        <ion-card-content padding>
+            <p>Prénom :<strong> {{contact.prenom}}</strong></p>
+            <p>Nom :<strong> {{contact.nom}}</strong></p>
+            <p>Email :<strong> {{contact.email}}</strong></p>
+            <img src="{{contact.photo}}">
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
