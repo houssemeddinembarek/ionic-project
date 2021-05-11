@@ -1,47 +1,52 @@
+import { Annonce } from './../models/annonce';
 import { NavController } from '@ionic/angular';
 import { AnnoncesService } from './../services/annonces.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-annonce',
   templateUrl: './annonce.page.html',
   styleUrls: ['./annonce.page.scss'],
 })
+
 export class AnnoncePage implements OnInit {
 
+  id: number;
+  annonce: Annonce;
   annoncesData: any;
-  constructor(public annoncesService: AnnoncesService, private nav: NavController) {
+
+  constructor(public annonceService: AnnoncesService,
+    private nav: NavController,
+    private router: NavController) {
     this.annoncesData = [];
   }
 
   ngOnInit() {
-  }
-
-  ionViewWillEnter() {
     this.getAllAnnonces();
   }
 
+
   getAllAnnonces() {
-    this.annoncesService.getAnnonces().subscribe(response => {
+    this.annonceService.getAnnonces().subscribe(response => {
       console.log(response);
       this.annoncesData = response;
     });
   }
 
   addAnnonce() {
-    this.nav.navigateForward('/add');
+    this.router.navigateForward('/add');
   }
 
   edit(id: number) {
-    this.nav.navigateForward('/update' + id);
+    this.router.navigateForward(['update-annonce/' + id]);
   }
 
   delete(annonce) {
-    this.annoncesService.deleteAnnonce(annonce.id).subscribe(response => {
+    this.annonceService.deleteAnnonce(annonce.id).subscribe(response => {
       this.getAllAnnonces();
       this.nav.pop();
     });
   }
-
 
 }

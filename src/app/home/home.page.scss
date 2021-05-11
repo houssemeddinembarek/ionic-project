@@ -1,27 +1,25 @@
-#container {
-  text-align: center;
+.card-background-page {
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
 
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
 }

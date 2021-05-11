@@ -1,0 +1,186 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["add-add-module"],{
+
+/***/ "J+Jj":
+/*!*********************************!*\
+  !*** ./src/app/add/add.page.ts ***!
+  \*********************************/
+/*! exports provided: AddPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddPage", function() { return AddPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_add_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./add.page.html */ "mowe");
+/* harmony import */ var _add_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./add.page.scss */ "g5JB");
+/* harmony import */ var _services_annonces_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../services/annonces.service */ "khOj");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+
+
+
+
+let AddPage = class AddPage {
+    constructor(formbuilder, router, annonceService, nav) {
+        this.formbuilder = formbuilder;
+        this.router = router;
+        this.annonceService = annonceService;
+        this.nav = nav;
+        this.add = formbuilder.group({
+            titre: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(8)]],
+            image: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]],
+            description: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(8)]],
+            prix: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].min(1)]],
+            categorie: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]],
+        });
+    }
+    ngOnInit() {
+    }
+    getAllAnnonces() {
+        this.annonceService.getAnnonces().subscribe(response => {
+            console.log(response);
+            this.annoncesData = response;
+        });
+    }
+    onadd() {
+        const data = this.add.value;
+        console.log(this.add.value.titre);
+        console.log(this.add.value.photo);
+        this.annonceService.createAnnonce(data).subscribe((response) => {
+            console.log(response);
+            this.nav.pop();
+        }, error => {
+            alert("Oooops!");
+        });
+    }
+};
+AddPage.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"] },
+    { type: _services_annonces_service__WEBPACK_IMPORTED_MODULE_3__["AnnoncesService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"] }
+];
+AddPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
+        selector: 'app-add',
+        template: _raw_loader_add_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_add_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], AddPage);
+
+
+
+/***/ }),
+
+/***/ "NSIT":
+/*!*******************************************!*\
+  !*** ./src/app/add/add-routing.module.ts ***!
+  \*******************************************/
+/*! exports provided: AddPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddPageRoutingModule", function() { return AddPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _add_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./add.page */ "J+Jj");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _add_page__WEBPACK_IMPORTED_MODULE_3__["AddPage"]
+    }
+];
+let AddPageRoutingModule = class AddPageRoutingModule {
+};
+AddPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], AddPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "g5JB":
+/*!***********************************!*\
+  !*** ./src/app/add/add.page.scss ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhZGQucGFnZS5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "mowe":
+/*!*************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/add/add.page.html ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n\n   <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"home\"></ion-back-button>\n    </ion-buttons>\n\n    <ion-title>Créer une annonce</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n\n\n  <form [formGroup]='add'>\n\n    <!--pour le titre -->\n    <div class=\"form-group col-6\">\n        <label for=\"exampleInputPassword1\">Titre :</label>\n        <input type=\"text\" class=\"form-control\"  placeholder=\"ecrire un nom\" formControlName='titre'>\n    <!--Validation du titre -->\n      <div class=\"col-sm-10\">\n        <small id=\"text-danger\" *ngIf=\"add.get('titre').hasError('required') && add.get('titre').touched\">this field is required</small>\n        <small id=\"text-danger\" *ngIf=\"add.get('titre').hasError('minlength')\">\n               the minimum length for this field is 8 character\n        </small> \n      </div>\n    </div>\n    <!--********************* -->\n\n    <!--pour la description -->\n      <div class=\"form-group col-6\">\n        <label for=\"exampleInputdescription\">Description :</label>\n        <input type=\"text\" class=\"form-control\"  placeholder=\"ecrire une description\" formControlName='description' id=\"exampleInputdescription\">\n    <!--Validation du description -->\n      <div class=\"col-sm-10\">\n        <small id=\"text-danger\" *ngIf=\"add.get('description').hasError('required') && add.get('description').touched\">this field is required</small>\n        <small id=\"text-danger\" *ngIf=\"add.get('description').hasError('minlength')\">\n               the minimum length for this field is 8 character\n        </small> \n      </div>\n    </div>\n    <!--********************* -->\n\n    <!--pour le prix -->\n      <div class=\"form-group col-6\">\n        <label for=\"exampleInputprix\">Prix :</label>\n        <input type=\"number\" class=\"form-control\"  placeholder=\"saisir le prix\" formControlName='prix' id=\"exampleInputprix\">\n    <!--Validation du description -->\n      <div class=\"col-sm-10\">\n          <small class=\"text-danger\" *ngIf=\"add.get('prix').hasError('min')\">\n            le prix doit étre positive\n          </small>\n          <small class=\"text-danger\" *ngIf=\"add.get('prix').hasError('required') && add.get('description').touched\">\n            le champ est obligatoire\n          </small>\n      </div>\n    </div>\n    <!--********************* -->\n\n    <!--pour la categorie -->\n      <div class=\"form-group col-6\">\n        <label for=\"exampleInputcategorie\">Categorie :</label>\n        <select class=\"form-control\" id=\"exampleInputcategorie\" formControlName=\"categorie\">\n                <option>Samsung</option>\n                <option>Huawei</option>\n                <option>iPhone</option>\n                 <option>Oppo</option>\n        </select>    \n      <!--Validation du categorie -->\n      <div class=\"col-sm-10\">\n          <small class=\"text-danger\" *ngIf=\"add.get('categorie').hasError('required') && add.get('categorie').touched\">\n            le champ est obligatoire\n          </small>\n      </div>\n    </div>\n    <!--********************* -->\n\n <!--pour les images -->\n    <div class=\"form-group col-6\">\n        <label for=\"exampleInputimage\">Image :</label>\n        <input type=\"file\" class=\"form-control\" accept=\".jpg,.jpeg,.png\" id=\"file\" name=\"image\"   formControlName=\"image\" >\n    <!--Validation du titre -->\n      <div class=\"col-sm-10\">\n        <small class=\"text-danger\" *ngIf=\"add.get('image').hasError('required')\">\n            le champ est obligatoire\n        </small>\n      </div>\n    </div>\n    <!--********************* -->\n\n    <button type=\"submit\" class=\"btn btn-primary\" (click)=\"onadd()\">Submit</button>\n  </form>\n\n</ion-content>\n");
+
+/***/ }),
+
+/***/ "wNkF":
+/*!***********************************!*\
+  !*** ./src/app/add/add.module.ts ***!
+  \***********************************/
+/*! exports provided: AddPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddPageModule", function() { return AddPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _add_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./add-routing.module */ "NSIT");
+/* harmony import */ var _add_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./add.page */ "J+Jj");
+
+
+
+
+
+
+
+let AddPageModule = class AddPageModule {
+};
+AddPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
+            _add_routing_module__WEBPACK_IMPORTED_MODULE_5__["AddPageRoutingModule"]
+        ],
+        declarations: [_add_page__WEBPACK_IMPORTED_MODULE_6__["AddPage"]]
+    })
+], AddPageModule);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=add-add-module.js.map

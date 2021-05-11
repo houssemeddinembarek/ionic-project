@@ -21,22 +21,20 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./about/about.module').then(m => m.AboutPageModule)
   },
-  {
-    path: 'inscription',
-    loadChildren: () => import('./inscription/inscription.module').then(m => m.InscriptionPageModule)
-  },
+
   {
     path: 'annonce',
-    loadChildren: () => import('./annonce/annonce.module').then( m => m.AnnoncePageModule)
+    loadChildren: () => import('./annonce/annonce.module').then(m => m.AnnoncePageModule)
   },
   {
-    path: 'update-annonce',
-    loadChildren: () => import('./update-annonce/update-annonce.module').then( m => m.UpdateAnnoncePageModule)
+    path: 'update-annonce/:id',
+    loadChildren: () => import('./update-annonce/update-annonce.module').then(m => m.UpdateAnnoncePageModule)
   },
   {
     path: 'add',
-    loadChildren: () => import('./add/add.module').then( m => m.AddPageModule)
+    loadChildren: () => import('./add/add.module').then(m => m.AddPageModule)
   },
+
 ];
 
 

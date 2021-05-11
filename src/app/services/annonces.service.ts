@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Annonce } from '../models/annonce';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnnoncesService {
+  newannonce$ = new BehaviorSubject<Annonce>(null);
+  editannonce$ = new BehaviorSubject<Annonce>(null);
+  deleteannonce$ = new BehaviorSubject<Annonce>(null);
 
 
-
-  base_path = 'http://localhost:3000/annonces';
+  base_path = 'http://localhost:3000/Annonce';
 
 
   constructor(private http: HttpClient) { }
@@ -35,12 +37,12 @@ export class AnnoncesService {
     return this.http.get<Annonce>(this.base_path)
   }
 
-  updateAnnonce(id, item): Observable<Annonce> {
-    return this.http.put<Annonce>(this.base_path + '/' + id, JSON.stringify(item), this.httpOptions)
+  updateAnnonce(annonce: Annonce): Observable<Annonce> {
+    return this.http.put<Annonce>(this.base_path + '/' + annonce.id, annonce)
   }
 
-  deleteAnnonce(id) {
-    return this.http.get<Annonce>(this.base_path + '/' + id, this.httpOptions)
+  deleteAnnonce(id: number): Observable<any> {
+    return this.http.delete<Annonce>(this.base_path + '/' + id, this.httpOptions)
   }
 
 }

@@ -1,0 +1,28 @@
+{
+  "Annonce": [
+    {
+      "titre": "wdgnwgdnw",
+      "image": "",
+      "description": "wn<gnwnwn",
+      "prix": "",
+      "categorie": "",
+      "id": 3
+    },
+    {
+      "titre": "wdgnwgdnw",
+      "image": "assets\nissan.jpg",
+      "description": "wn<gnwnwn",
+      "prix": 5237,
+      "categorie": "Voiture",
+      "id": 4
+    },
+    {
+      "titre": "qlafliafjajfa",
+      "image": "assets\1.jpg",
+      "description": "aldijiajdiajdaijd",
+      "prix": 6548486,
+      "categorie": "Oppo",
+      "id": 5
+    }
+  ]
+}

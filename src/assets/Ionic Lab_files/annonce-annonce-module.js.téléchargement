@@ -1,0 +1,180 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["annonce-annonce-module"],{
+
+/***/ "1Pxu":
+/*!***************************************************!*\
+  !*** ./src/app/annonce/annonce-routing.module.ts ***!
+  \***************************************************/
+/*! exports provided: AnnoncePageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnnoncePageRoutingModule", function() { return AnnoncePageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _annonce_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./annonce.page */ "XU9K");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _annonce_page__WEBPACK_IMPORTED_MODULE_3__["AnnoncePage"]
+    }
+];
+let AnnoncePageRoutingModule = class AnnoncePageRoutingModule {
+};
+AnnoncePageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], AnnoncePageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "C/QA":
+/*!*******************************************!*\
+  !*** ./src/app/annonce/annonce.module.ts ***!
+  \*******************************************/
+/*! exports provided: AnnoncePageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnnoncePageModule", function() { return AnnoncePageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _annonce_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./annonce-routing.module */ "1Pxu");
+/* harmony import */ var _annonce_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./annonce.page */ "XU9K");
+
+
+
+
+
+
+
+let AnnoncePageModule = class AnnoncePageModule {
+};
+AnnoncePageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _annonce_routing_module__WEBPACK_IMPORTED_MODULE_5__["AnnoncePageRoutingModule"]
+        ],
+        declarations: [_annonce_page__WEBPACK_IMPORTED_MODULE_6__["AnnoncePage"]]
+    })
+], AnnoncePageModule);
+
+
+
+/***/ }),
+
+/***/ "T3vV":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/annonce/annonce.page.html ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n\n   <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"home\"></ion-back-button>\n    </ion-buttons>\n\n    <ion-title>Annonce</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n\n\n\n<ion-content>\n\n      <ion-item *ngFor=\"let annonce of annoncesData\">\n        <ion-card>\n            <ion-card-header class=\"myCardHeader\">Annonces</ion-card-header>\n            <ion-card-content padding>\n                <p>Titre :<strong> {{annonce.titre}}</strong></p>\n                <p>Description :<strong> {{annonce.description}}</strong></p>\n                <ion-item *ngIf=\"annonce.country == 'USA' \" style=\"color: red;\">\n                    <p>country :<strong> {{annonce.country}}</strong></p>\n                </ion-item>\n                <ion-item *ngIf=\"annonce.age != 'USA' \">\n                    <p>Prix :<strong> {{annonce.prix}}</strong></p>\n                </ion-item>\n                <img src=\"{{annonce.image}}\">\n\n            <ion-button (click)=\"edit(annonce.id)\">Edit</ion-button> \n            <ion-button (click)=\"delete(annonce.id)\">Supprimer</ion-button>\n            </ion-card-content>\n        </ion-card>\n      </ion-item>\n\n</ion-content>\n");
+
+/***/ }),
+
+/***/ "XU9K":
+/*!*****************************************!*\
+  !*** ./src/app/annonce/annonce.page.ts ***!
+  \*****************************************/
+/*! exports provided: AnnoncePage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnnoncePage", function() { return AnnoncePage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_annonce_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./annonce.page.html */ "T3vV");
+/* harmony import */ var _annonce_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./annonce.page.scss */ "kpby");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _services_annonces_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../services/annonces.service */ "khOj");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+
+
+
+let AnnoncePage = class AnnoncePage {
+    constructor(annonceService, nav) {
+        this.annonceService = annonceService;
+        this.nav = nav;
+        this.annoncesData = [];
+    }
+    ngOnInit() {
+        this.annonceService.getAnnonces().subscribe((list) => {
+            return this.annoncesData = list;
+        });
+    }
+    ionViewWillEnter() {
+        this.getAllAnnonces();
+    }
+    getAllAnnonces() {
+        this.annonceService.getAnnonces().subscribe(response => {
+            console.log(response);
+            this.annoncesData = response;
+        });
+    }
+    addAnnonce() {
+        this.nav.navigateForward('/add');
+    }
+    edit(id) {
+        this.nav.navigateForward('/update' + id);
+    }
+    delete(annonce) {
+        this.annonceService.deleteAnnonce(annonce.id).subscribe(response => {
+            this.getAllAnnonces();
+            this.nav.pop();
+        });
+    }
+};
+AnnoncePage.ctorParameters = () => [
+    { type: _services_annonces_service__WEBPACK_IMPORTED_MODULE_4__["AnnoncesService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"] }
+];
+AnnoncePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
+        selector: 'app-annonce',
+        template: _raw_loader_annonce_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_annonce_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], AnnoncePage);
+
+
+
+/***/ }),
+
+/***/ "kpby":
+/*!*******************************************!*\
+  !*** ./src/app/annonce/annonce.page.scss ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhbm5vbmNlLnBhZ2Uuc2NzcyJ9 */");
+
+/***/ })
+
+}]);
+//# sourceMappingURL=annonce-annonce-module.js.map

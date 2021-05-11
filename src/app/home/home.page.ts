@@ -18,5 +18,30 @@ export class HomePage {
   }
 
 
+  annonces = [
 
+    {
+      titre: 'Huawei',
+      description: 'Best Phone',
+      image: 'assets/huawei2.jpg'
+
+    }
+    ,
+    {
+      titre: 'Samsung',
+      description: 'Best Phone',
+      image: 'assets/samsung3.jpg'
+
+    }
+    , {
+      titre: 'iPhone',
+      description: 'Best Phone',
+      image: 'assets/iphone3.jpg'
+    }
+    , {
+      titre: 'Oppo',
+      description: 'Best Phone',
+      image: 'assets/oppo2.jpg'
+    }
+  ]
 }

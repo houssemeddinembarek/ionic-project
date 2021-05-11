@@ -13,7 +13,9 @@ import { NavController } from '@ionic/angular';
 })
 export class AddPage implements OnInit {
   public add: FormGroup;
-
+  id: number;
+  annonce: Annonce;
+  annoncesData: any;
 
   constructor(public formbuilder: FormBuilder, private router: NavController, public annonceService: AnnoncesService, private nav: NavController) {
     this.add = formbuilder.group({
@@ -29,6 +31,13 @@ export class AddPage implements OnInit {
   ngOnInit() {
   }
 
+  getAllAnnonces() {
+    this.annonceService.getAnnonces().subscribe(response => {
+      console.log(response);
+      this.annoncesData = response;
+    });
+  }
+
   onadd() {
     const data = this.add.value;
     console.log(this.add.value.titre)
@@ -41,4 +50,6 @@ export class AddPage implements OnInit {
     }
     );
   }
+
+
 }

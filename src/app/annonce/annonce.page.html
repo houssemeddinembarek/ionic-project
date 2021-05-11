@@ -5,9 +5,12 @@
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>Annonce</ion-title>
+    <ion-title>Annonce </ion-title>
   </ion-toolbar>
 </ion-header>
+
+
+
 
 <ion-content>
 
@@ -15,17 +18,17 @@
         <ion-card>
             <ion-card-header class="myCardHeader">Annonces</ion-card-header>
             <ion-card-content padding>
-                <p>Name :<strong> {{annonce.name}}</strong></p>
-                <p>Email :<strong> {{annonce.email}}</strong></p>
-                <ion-item *ngIf="annonce.country == 'USA' " style="color: red;">
-                    <p>country :<strong> {{annonce.country}}</strong></p>
-                </ion-item>
-                <ion-item *ngIf="annonce.age != 'USA' ">
-                    <p>age :<strong> {{annonce.age}}</strong></p>
-                </ion-item>
-            <ion-button >Edit</ion-button> 
-            <ion-button (click)="delete(annonce.id)">Supprimer</ion-button>
+                <p>Titre :<strong> {{annonce.titre}} </strong></p>
+                <p>Description :<strong> {{annonce.description}}</strong></p>
+              
+                <img src="{{annonce.image}}">
+
+            <ion-button (click)="edit(annonce.id)">Edit</ion-button> 
+            <ion-button (click)="delete(annonce)">Supprimer</ion-button>
             </ion-card-content>
         </ion-card>
-    </ion-item>
+      </ion-item>
+
 </ion-content>
+
+
