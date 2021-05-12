@@ -18,6 +18,8 @@ export class UpdateAnnoncePage implements OnInit {
     public nav: NavController,
     public router: ActivatedRoute) {
 
+
+
   }
 
   ngOnInit() {

@@ -2,14 +2,6 @@
   "Annonce": [
     {
       "titre": "wdgnwgdnw",
-      "image": "",
-      "description": "wn<gnwnwn",
-      "prix": "",
-      "categorie": "",
-      "id": 3
-    },
-    {
-      "titre": "wdgnwgdnw",
       "image": "assets\nissan.jpg",
       "description": "wn<gnwnwn",
       "prix": 5237,
@@ -17,12 +9,28 @@
       "id": 4
     },
     {
-      "titre": "qlafliafjajfa",
-      "image": "assets\1.jpg",
-      "description": "aldijiajdiajdaijd",
-      "prix": 6548486,
+      "titre": "lrevbpUREIBHIPUrh",
+      "image": "C:\\fakepath\\nissan.jpg",
+      "description": "qefvrmuneqrunhvg",
+      "prix": 6486,
       "categorie": "Oppo",
       "id": 5
+    },
+    {
+      "titre": "<sdvqvqbvq",
+      "image": "C:\\fakepath\\nissan.jpg",
+      "description": "qbfdbfbqffb",
+      "prix": 74537,
+      "categorie": "Huawei",
+      "id": 6
+    },
+    {
+      "titre": "qùerijgvqiero",
+      "image": "C:\\fakepath\\nissan.jpg",
+      "description": "ùqiobernbqe",
+      "prix": 557,
+      "categorie": "iPhone",
+      "id": 7
     }
   ]
 }

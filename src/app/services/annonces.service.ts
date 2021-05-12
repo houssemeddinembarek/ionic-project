@@ -29,16 +29,16 @@ export class AnnoncesService {
     return this.http.post<Annonce>(this.base_path, JSON.stringify(item), this.httpOptions)
   }
 
-  getAnnonce(id): Observable<Annonce> {
+  getAnnonce(id: number): Observable<Annonce> {
     return this.http.get<Annonce>(this.base_path + '/' + id, this.httpOptions)
   }
 
-  getAnnonces(): Observable<Annonce> {
-    return this.http.get<Annonce>(this.base_path)
+  getAnnonces(): Observable<Annonce[]> {
+    return this.http.get<Annonce[]>(this.base_path, this.httpOptions)
   }
 
   updateAnnonce(annonce: Annonce): Observable<Annonce> {
-    return this.http.put<Annonce>(this.base_path + '/' + annonce.id, annonce)
+    return this.http.put<Annonce>(this.base_path + '/' + annonce.id, annonce, this.httpOptions)
   }
 
   deleteAnnonce(id: number): Observable<any> {
