@@ -1,7 +1,7 @@
 import { AnnoncesService } from './../services/annonces.service';
 import { Annonce } from './../models/annonce';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 @Component({
@@ -10,16 +10,18 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./update-annonce.page.scss'],
 })
 export class UpdateAnnoncePage implements OnInit {
-  public edit: FormGroup;
+
+  editForm = new FormGroup({
+    titre: new FormControl('')
+  });
   annonce: Annonce;
   id: number;
+
+
   constructor(public formbuilder: FormBuilder,
     public annoncesService: AnnoncesService,
     public nav: NavController,
     public router: ActivatedRoute) {
-
-
-
   }
 
   ngOnInit() {
@@ -27,23 +29,20 @@ export class UpdateAnnoncePage implements OnInit {
     this.annoncesService.getAnnonce(this.id).subscribe(response => {
       console.log(response);
       this.annonce = response;
-      this.edit.patchValue(this.annonce);
+      this.editForm.patchValue(this.annonce);
     })
 
   }
 
-  update() {
-    const data = this.edit.value;
+  onUpdate() {
+    const data = {
+      ...this.editForm.value,
+      id: this.id
+    }
     this.annoncesService.updateAnnonce(data).subscribe(response => {
-      this.edit.reset;
+      this.editForm.reset;
       this.annoncesService.editannonce$.next(response);
       this.nav.pop();
     })
-
-
   }
-
-
-
-
 }

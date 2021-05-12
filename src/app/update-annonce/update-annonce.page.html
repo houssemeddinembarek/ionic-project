@@ -5,23 +5,16 @@
 </ion-header>
 
 <ion-content>
-<form [formGroup]='edit' >
+  <form [formGroup]='edit' >
 
     <!--pour le titre -->
     <div class="form-group col-6">
         <label for="exampleInputPassword1">Titre :</label>
         <input type="text" class="form-control"  placeholder="ecrire un nom" formControlName='titre' >
     <!--Validation du titre -->
-      <div class="col-sm-10">
-        <small id="text-danger" *ngIf="add.get('titre').hasError('required') && add.get('titre').touched">this field is required</small>
-        <small id="text-danger" *ngIf="add.get('titre').hasError('minlength')">
-               the minimum length for this field is 8 character
-        </small> 
-      </div>
     </div>
     <!--********************* -->
-
-    
+    <button type="submit" class="btn btn-primary" (click)="onUpdate()">Submit</button>
 
   </form>
 </ion-content>

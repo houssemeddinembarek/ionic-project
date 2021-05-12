@@ -23,7 +23,7 @@
               
                 <img src="{{annonce.image}}">
 
-            <ion-button (click)="edit(annonce.id)">Edit</ion-button> 
+            <ion-button (click)="edit(annonce.id)"><a [title]="Edit" [routerLink]="['/update-annonce', annonce.id]">Edit</a></ion-button> 
             <ion-button (click)="delete(annonce)">Supprimer</ion-button>
             </ion-card-content>
         </ion-card>
