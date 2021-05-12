@@ -1,11 +1,15 @@
 <ion-header>
   <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="home"></ion-back-button>
+  </ion-buttons>
     <ion-title>update-annonce</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]='edit' >
+  
+  <form [formGroup]="editForm" >
 
     <!--pour le titre -->
     <div class="form-group col-6">
